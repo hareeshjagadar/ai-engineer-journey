@@ -1,15 +1,21 @@
-def two_sum(nums, target):
-    seen = {}  # number -> index
-    for i, num in enumerate(nums):
+list_of_people = ["Pramod", "hareesh", "Aishwarya"]
+print(list_of_people[1])
+print(list_of_people[-2])
 
-        
-        # Step 1: what number do you NEED to pair with num?
-        needed = target - num
-        # Step 2: if that number is in seen → return [?, ?]
-        if needed in seen:
-            return [seen[needed], i]
-        # Step 3: otherwise → store num with its index
-        seen[num] = i
-print(two_sum([2, 7, 11, 15], 9))  # [0, 1]
-print(two_sum([3, 2, 4], 6))       # [1, 2]
-print(two_sum([3, 3], 6))          # [0, 1]
+list_of_people.append("harshitha")
+print(list_of_people)
+
+
+people_spent = {"Pramod": 4000, "hareesh": 200, "Aishwarya": 300, "harshitha": 0}
+
+people_spent["sumedh"] = 0
+
+total_cost = sum(people_spent.values())
+per_person_cost = total_cost / len(people_spent)
+
+for i in people_spent:
+    control = people_spent[i] - per_person_cost
+    if control > 0:
+        print(f"{i} get back {control}")
+    elif control < 0:
+        print(f"{i} owes {-control}") 
